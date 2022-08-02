@@ -1,13 +1,71 @@
-import axios from "axios";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../_actions/user_action";
-import { useParams, useLocation, useNavigate } from "react-router-dom";
+// import { useParams, useLocation, useNavigate } from "react-router-dom";
+
+import { alpha, styled } from "@mui/material/styles";
+import logo_ani from "../../assets/logo_ani.gif";
+
+import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+import CssBaseline from "@mui/material/CssBaseline";
+import TextField from "@mui/material/TextField";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
+import Link from "@mui/material/Link";
+// import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+
+// 바탕  #141414v
+// 흰글씨 #F3F3F3
+// 회글씨#686868
+
+const ColorButton = styled(Button)(({ theme }) => ({
+  color: theme.palette.getContrastText("#A6095D"),
+  lineHeight: "44px",
+  borderRadius: "30px",
+  fontSize: "22px",
+  backgroundColor: "#A6095D",
+  "&:hover": {
+    backgroundColor: "#A6095D",
+  },
+}));
+
+const TextFieldLogin = styled(TextField)({
+  textAlign: "center !important",
+
+  "& label.Mui-focused": {
+    color: "#141414", // 위로 올라갈때
+  },
+  "& .MuiInput-underline:after": {
+    borderBottomColor: "white",
+  },
+  "& .MuiOutlinedInput-root": {
+    "& input": {
+      // 안에 텍스트
+      color: "#141414",
+      fontSize: "21px",
+    },
+    "& fieldset": {
+      borderColor: "white",
+      borderRadius: "30px",
+    },
+    "&:hover fieldset": {
+      borderColor: "white",
+    },
+    "&.Mui-focused fieldset": {
+      borderColor: "white",
+    },
+  },
+});
 
 function LoginPage(props) {
-  const params = useParams();
-  const location = useLocation();
-  const navigate = useNavigate();
+  // const params = useParams();
+  // const location = useLocation();
+  // const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
@@ -40,32 +98,106 @@ function LoginPage(props) {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-        height: "100vh",
-      }}
-    >
-      <form
-        style={{ display: "flex", flexDirection: "column" }}
-        onSubmit={onSubmitHandler}
+    <Container component="main" maxWidth="xs">
+      <CssBaseline />
+      <Box
+        sx={{
+          marginTop: 12,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
       >
-        <label>Email</label>
-        <input type="email" value={Email} onChange={onEmailHandler}></input>
-        <label>Password</label>
-        <input
-          type="password"
-          value={Password}
-          onChange={onPasswordHandler}
-        ></input>
+        <img
+          alt="logo_ani"
+          src={logo_ani}
+          style={{
+            width: "100px",
+          }}
+          sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
+        />
 
-        <br></br>
-        <button type="submit">Login</button>
-      </form>
-    </div>
+        <form
+          style={{ display: "flex", flexDirection: "column" }}
+          onSubmit={onSubmitHandler}
+        >
+          <Box
+            component="form"
+            // onSubmit={handleSubmit}
+            noValidate
+            sx={{ mt: 1 }}
+          >
+            <TextFieldLogin
+              margin="normal"
+              fullWidth
+              value={Email}
+              onChange={onEmailHandler}
+              id="email"
+              label="아이디"
+              name="email"
+              type="email"
+              autoComplete="email"
+              autoFocus
+              // sx={{ mx: "auto" }}
+            />
+            <TextFieldLogin
+              margin="normal"
+              fullWidth
+              value={Password}
+              onChange={onPasswordHandler}
+              id="password"
+              name="password"
+              label="비밀번호"
+              type="password"
+              autoComplete="current-password"
+            />
+
+            {/* 개구림 저장ui 지우고 싶다 */}
+            <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              label="Remember me"
+              style={{ marginLeft: "10px" }}
+            />
+            <ColorButton
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mb: 3 }}
+            >
+              <b>로그인</b>
+            </ColorButton>
+            <Typography align="center">
+              <Link href="#" underline="hover" variant="h6" color="inherit">
+                회원이 아니신가요? <b>회원가입</b>
+              </Link>
+              <br></br>
+              <Link
+                href="#"
+                underline="hover"
+                variant="subtitle2"
+                color="inherit"
+              >
+                아이디 혹은 비밀번호 찾기
+              </Link>
+            </Typography>
+
+            {/*  나란히 링크 만들때 참고 
+            <Grid container>
+              <Grid item xs>
+                <Link href="#" variant="body2">
+                  아이디 혹은 비밀번호 찾기
+                </Link>
+              </Grid>
+              <Grid item>
+                <Link href="#" variant="body2">
+                  {"Don't have an account? Sign Up"}
+                </Link>
+              </Grid>
+            </Grid> */}
+          </Box>
+        </form>
+      </Box>
+    </Container>
   );
 }
 

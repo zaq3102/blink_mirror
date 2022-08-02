@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { registerUser } from "../../_actions/user_action";
-import { useParams, useLocation, useNavigate } from "react-router-dom";
+// import { useParams, useLocation, useNavigate } from "react-router-dom";
 
 function RegisterPage(props) {
-  const params = useParams();
-  const location = useLocation();
-  const navigate = useNavigate();
+  // const params = useParams();
+  // const location = useLocation();
+  // const navigate = useNavigate();
 
   const dispatch = useDispatch();
 

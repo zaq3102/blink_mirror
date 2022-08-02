@@ -1,9 +1,12 @@
 import React, { useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import style from "./LandingPage.css";
+// import { useNavigate } from "react-router-dom";
+
+import { Typography } from "@mui/material";
 
 function LandingPage(props) {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   useEffect(() => {
     axios.get("/api/hello");
@@ -29,8 +32,13 @@ function LandingPage(props) {
         height: "100vh",
       }}
     >
-      <h2>시작 페이지</h2>
-      <button onClick={onClickHandler}>로그아웃</button>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <Typography component="h1" variant="h5">
+        안녕하세요 ~~ 홍길동님
+        <button onClick={onClickHandler}>로그아웃</button>
+      </Typography>
     </div>
   );
 }

@@ -1,14 +1,23 @@
-import Main from "./routes/Main";
-import VideoRoomComponent from "./components/VideoRoomComponent";
-
-import "./App.css";
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
+// style
+import "./App.css";
+
+// src
+import VideoRoomComponent from "./components/VideoRoomComponent";
+import Footer from "./components/Footer/Footer";
 import LandingPage from "./components/LandingPage/LandingPage";
 import LoginPage from "./components/LoginPage/LoginPage";
 import RegisterPage from "./components/RegisterPage/RegisterPage";
+import ResponsiveAppBar from "./components/ResponsiveAppBar/ResponsiveAppBar";
 import Auth from "./hoc/auth";
+// 고려할만할듯 로딩페이지 처럼
+// import Error404 from '../common/error/Error404';
+// import Error500 from '../common/error/Error500';
+
+// routes
+import Main from "./routes/Main";
 
 function App() {
   const NLandinPage = Auth(LandingPage, null);
@@ -16,24 +25,10 @@ function App() {
   const NRegisterPage = Auth(RegisterPage, false);
 
   return (
+    // 푸터 랑 네브바 특정 페이지만 if문주기 안되면 각각연결
     <Router>
       <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-          <li>
-            <Link to="/join">Join</Link>
-          </li>
-        </ul>
-
-        <hr />
-
-        {/* 기본주소 로그인관련으로 수정 (기존/*=>/join) */}
-
+        <ResponsiveAppBar></ResponsiveAppBar>
         <Routes>
           <Route path="/*" element={<NLandinPage />} />
 
@@ -45,6 +40,7 @@ function App() {
 
           <Route path="/register" element={<NRegisterPage />} />
         </Routes>
+        <Footer sx={{ mt: "130px", mb: 3 }} />
       </div>
     </Router>
   );

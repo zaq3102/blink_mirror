@@ -12,14 +12,19 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-
 import styled from "styled-components";
-
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 
-const pages = ["login", "join", "register", "videoroom"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const pages = ["login", "register", "join", "videoroom"];
+const settings = [
+  "profile",
+  "changepassword",
+  "findid",
+  "findpassword",
+  "lobby",
+  "lobbysetting",
+];
 
 const Logo = styled.img`
   width: 75px;
@@ -61,6 +66,13 @@ const ResponsiveAppBar = () => {
             />
           </Link>
 
+          {/*   참고
+@media only screen and (max-width: 700px) {
+  #titleContent, #navChatButton {
+      display: none;
+  }
+}
+ */}
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -147,7 +159,14 @@ const ResponsiveAppBar = () => {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                  <Typography textAlign="center">
+                    <Link
+                      style={{ textDecoration: "none", color: "black" }}
+                      to={`/${setting}`}
+                    >
+                      {setting}
+                    </Link>
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>

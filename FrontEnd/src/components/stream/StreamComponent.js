@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./StreamComponent.css";
 import OvVideoComponent from "./OvVideo";
+import Filter from "../Filter/Filter";
 
 import MicOffIcon from "@mui/icons-material/MicOff";
 import VideocamOffIcon from "@mui/icons-material/VideocamOff";
@@ -36,49 +37,67 @@ export default class StreamComponent extends Component {
 
   render() {
     return (
-      <div
-        className="OT_widget-container"
-        onMouseOver={this.onMouseOver}
-        onMouseLeave={this.onMouseLeave}
-      >
-        {this.state.showForm ? (
-          <span id="nickname">{this.props.user.getNickname()}</span>
-        ) : null}
+      <div>
+        <div
+          className="OT_widget-container"
+          onMouseOver={this.onMouseOver}
+          onMouseLeave={this.onMouseLeave}
+        >
+          {/* 마우스 접근시 보임  */}
+          {this.state.showForm ? (
+            <span id="nickname">{this.props.user.getNickname()}</span>
+          ) : null}
 
-        {this.props.user !== undefined &&
-        this.props.user.getStreamManager() !== undefined ? (
-          <div className="streamComponent">
-            <OvVideoComponent
-              user={this.props.user}
-              mutedSound={this.state.mutedSound}
-            />
-            <div id="statusIcons">
-              {!this.props.user.isVideoActive() ? (
-                <div id="camIcon">
-                  <VideocamOffIcon id="statusCam" />
-                </div>
-              ) : null}
+          {this.props.user !== undefined &&
+          this.props.user.getStreamManager() !== undefined ? (
+            <div className="streamComponent">
+              {/* 화면 송출 부분 ex>> id="video-str_CAM_WG4m_con_QdcVOVkZVu" */}
+              {/* <Filter user={this.props.user} /> */}
+              {/* {this.props.filter ? (
+ 
+                  <Filter user={this.props.user} /> 
+              ) : ( */}
+              {/* <OvVideoComponent
+                user={this.props.user}
+                mutedSound={this.state.mutedSound}
+              /> */}
+              {/* {this.props.filter ? (
+                <Filter user={this.props.user} /> // <Filter />
+              ) : ( */}
+              <OvVideoComponent
+                user={this.props.user}
+                mutedSound={this.state.mutedSound}
+              />
+              {/* )} */}
 
-              {!this.props.user.isAudioActive() ? (
-                <div id="micIcon">
-                  <MicOffIcon id="statusMic" />
-                </div>
-              ) : null}
+              <div id="statusIcons">
+                {!this.props.user.isVideoActive() ? (
+                  <div id="camIcon">
+                    <VideocamOffIcon id="statusCam" />
+                  </div>
+                ) : null}
+
+                {!this.props.user.isAudioActive() ? (
+                  <div id="micIcon">
+                    <MicOffIcon id="statusMic" />
+                  </div>
+                ) : null}
+              </div>
+
+              <div>
+                {!this.props.user.isLocal() && (
+                  <IconButton id="volumeButton" onClick={this.toggleSound}>
+                    {this.state.mutedSound ? (
+                      <VolumeOffIcon color="secondary" />
+                    ) : (
+                      <VolumeUpIcon />
+                    )}
+                  </IconButton>
+                )}
+              </div>
             </div>
-
-            <div>
-              {!this.props.user.isLocal() && (
-                <IconButton id="volumeButton" onClick={this.toggleSound}>
-                  {this.state.mutedSound ? (
-                    <VolumeOffIcon color="secondary" />
-                  ) : (
-                    <VolumeUpIcon />
-                  )}
-                </IconButton>
-              )}
-            </div>
-          </div>
-        ) : null}
+          ) : null}
+        </div>
       </div>
     );
   }

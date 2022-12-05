@@ -34,9 +34,9 @@
 
 - 아이디와 비밀번호를 입력하면 로그인 할 수 있습니다.
 
-![Untitled](assets/Untitled 1-16608516342096.png)
+![Untitled](assets/Untitled1-16608516342096.png)
 
-![Untitled](assets/Untitled 2-16608516342108.png)
+![Untitled](assets/Untitled2-16608516342108.png)
 
 #### 회원가입
 
@@ -45,23 +45,23 @@
 - 사용자 신원 조회를 위해 이메일 인증을 해야 합니다.
 - 이메일 인증을 거치지 않으면 서비스 이용이 제한됩니다.
 
-![Untitled](assets/Untitled 3-16608516342097.png)
+![Untitled](assets/Untitled3-16608516342097.png)
 
 #### 이메일 인증
 
 - 이메일 인증을 완료하지 않은 상태에서 로그인을 시도하면 인증을 요구하는 팝업창이 뜹니다.
 - 회원가입 시 입력한 이메일로 인증할 수 있는 메일이 보내집니다.
 
-![Untitled](assets/Untitled 4.png)
+![Untitled](assets/Untitled4.png)
 
-![Untitled](assets/Untitled 5.png)
+![Untitled](assets/Untitled5.png)
 
 #### 방 만들기
 
 - 2:2, 3:3, 4:4 미팅 방 중 하나를 선택하여, 방의 최대 인원수를 설정할 수 있습니다.
 - 블라인드 미팅을 즐길 수 있는 방은 가입한 유저만 생성할 수 있습니다.
 
-![Untitled](assets/Untitled 6.png)
+![Untitled](assets/Untitled6.png)
 
 #### 방 입장하기
 
@@ -69,7 +69,7 @@
 
 - 링크를 통해 웹 페이지로 들어오면, 닉네임과 인적사항을 적고 참가합니다.
 
-  ![Untitled](assets/Untitled 7.png)
+  ![Untitled](assets/Untitled7.png)
 
 #### 게임 대기
 
@@ -81,9 +81,9 @@
 
 - 방에 참가한 모든 인원이 준비 버튼을 누르면, 게임이 시작됩니다.
 
-  ![Untitled](assets/Untitled 8.png)
+  ![Untitled](assets/Untitled8.png)
 
-  ![Untitled](assets/Untitled 9.png)
+  ![Untitled](assets/Untitled9.png)
 
 #### 자기 소개 시간
 
@@ -93,7 +93,7 @@
 
 - 자기소개가 모두 끝나면 첫 인상 선택이 시작됩니다.
 
-  ![Untitled](assets/Untitled 10.png)
+  ![Untitled](assets/Untitled10.png)
 
 #### 첫 인상 선택
 
@@ -103,9 +103,9 @@
 
 - 첫 인상 선택이 끝나면 라이어 게임이 시작됩니다.
 
-  ![Untitled](assets/Untitled 11.png)
+  ![Untitled](assets/Untitled11.png)
 
-  ![Untitled](assets/Untitled 12.png)
+  ![Untitled](assets/Untitled12.png)
 
 #### 라이어 게임
 
@@ -118,27 +118,27 @@
 - 거짓말쟁이는 기본적으로 1점을 얻고 시작합니다.
 - 게임이 끝난 후, 최종 점수가 가장 높은 참가자는 앞서 진행한 첫 인상 선택의 결과를 볼 수 있습니다.
 
-![Untitled](assets/Untitled 13.png)
+![Untitled](assets/Untitled13.png)
 
-![Untitled](assets/Untitled 14.png)
+![Untitled](assets/Untitled14.png)
 
-![Untitled](assets/Untitled 15.png)
+![Untitled](assets/Untitled15.png)
 
-![Untitled](assets/Untitled 16.png)
+![Untitled](assets/Untitled16.png)
 
-![Untitled](assets/Untitled 17.png)
+![Untitled](assets/Untitled17.png)
 
-![Untitled](assets/Untitled 18.png)
+![Untitled](assets/Untitled18.png)
 
-![Untitled](assets/Untitled 19.png)
+![Untitled](assets/Untitled19.png)
 
 #### 자유 시간
 
 - 라이어 게임이 끝나고 나면, 자유 대화 시간이 주어집니다.
 
-![Untitled](assets/Untitled 20.png)
+![Untitled](assets/Untitled20.png)
 
-![Untitled](assets/Untitled 21.png)
+![Untitled](assets/Untitled21.png)
 
 ### 최종 선택
 
@@ -147,9 +147,9 @@
 - 매칭되지 않은 사람들은 연결이 종료됩니다.
 - 방에 남은 인원들은 자유롭게 이야기 할 수 있습니다.
 
-![Untitled](assets/Untitled 22.png)
+![Untitled](assets/Untitled22.png)
 
-![Untitled](assets/Untitled 23.png)
+![Untitled](assets/Untitled23.png)
 
 
 
